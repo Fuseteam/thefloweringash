@@ -32,7 +32,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - uses: cachix/cachix-action@v8
         with:
-          name: poc
-          authToken: '${{ secrets.CACHIX_TOKEN }}'
+          name: armhf
+          authToken: '${{ secrets.ARMHF }}'
       - run: nix-build default.nix --arg systems '[ "${{ matrix.arch }}" ]'
 
