@@ -9,6 +9,4 @@ let
     ];
   };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
-  in with pkgsCross; [
-  vim
-  ]
+  in with pkgsCross; ${pkgs}
