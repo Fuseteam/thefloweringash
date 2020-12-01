@@ -1,4 +1,4 @@
-{target, pckg}:
+{target, package}:
 let
    nixpkgs= builtins.fetchGit { 
     url = "https://github.com/Fuseteam/nixpkgs";
@@ -10,4 +10,3 @@ let
   };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
   in with pkgsCross;
-  ${package}
