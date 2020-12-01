@@ -33,7 +33,7 @@ jobs:
         with:
           name: armhf
           authToken: '${{ secrets.ARMHF }}'
-      - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg ${{ matrix.pckg}} --show-trace --keep-going
+      - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg '[ "${{ matrix.pckg}}" ]' --show-trace --keep-going
   arm64:
     strategy:
       matrix:
@@ -54,6 +54,6 @@ jobs:
         with:
           name: arm64
           authToken: '${{ secrets.ARM64 }}'
-      - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg ${{ matrix.pckg}} --show-trace --keep-going
+      - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg '[ "${{ matrix.pckg}}" ]' --show-trace --keep-going
 
 
