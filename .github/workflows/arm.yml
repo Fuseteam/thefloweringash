@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-for-arch:
+  armhf:
     strategy:
       matrix:
         target: [ armv7l-hf-multiplatform ]
@@ -34,4 +34,26 @@ jobs:
           name: armhf
           authToken: '${{ secrets.ARMHF }}'
       - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg ${{ matrix.pckg}} --show-trace --keep-going
+  arm64:
+    strategy:
+      matrix:
+        target: [ armv7l-hf-multiplatform ]
+        pckg: [ vim, curl ]
+      
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v12
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: cachix/cachix-action@v8
+        with:
+          name: arm64
+          authToken: '${{ secrets.ARM64 }}'
+      - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr pckg ${{ matrix.pckg}} --show-trace --keep-going
+
 
