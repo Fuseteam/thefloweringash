@@ -37,7 +37,7 @@ jobs:
   arm64:
     strategy:
       matrix:
-        target: [ armv7l-hf-multiplatform ]
+        target: [ aarch64-multiplatform ]
         pckg: [ vim, curl ]
       
     # The type of runner that the job will run on
