@@ -1,4 +1,4 @@
-{target pckg}:
+{target, pckg}:
 let
    nixpkgs= builtins.fetchGit { 
     url = "https://github.com/Fuseteam/nixpkgs";
