@@ -9,4 +9,4 @@ let
     ];
   };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
-  in with pkgsCross;
+  in with pkgsCross; ${package}
