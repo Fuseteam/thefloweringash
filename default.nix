@@ -9,4 +9,4 @@ let
     ];
   };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
-  in with pkgsCross;[ ${pckg} ]
+  in with pkgsCross;[ vim curl git ]
