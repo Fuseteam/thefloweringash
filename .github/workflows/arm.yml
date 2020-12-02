@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         target: [ armv7l-hf-multiplatform, aarch64-multiplatform ]
-        package: [ htop, nmap ]
+        package: [ htop, nmap, nextdns, tree ]
         include: 
           - target: armv7l-hf-multiplatform
             cache: armhf
