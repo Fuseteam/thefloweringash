@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         target: [ armv7l-hf-multiplatform, aarch64-multiplatform ]
-        package: [ vim, firefox, curl ]
+        package: [ vim, firefox, curl, git ]
         include: 
           - target: armv7l-hf-multiplatform
             cache: armhf
