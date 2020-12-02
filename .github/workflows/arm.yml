@@ -21,10 +21,10 @@ jobs:
         include: 
           - target: armv7l-hf-multiplatform
             cache: armhf
-            secret: '${{ secrets.ARMHF }}'
+            secret: ARMHF
           - target: aarch64-multiplatform
             cache: arm64
-            secret: '${{ secrets.ARM64 }}'
+            secret: ARM64
       
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -39,5 +39,5 @@ jobs:
       - uses: cachix/cachix-action@v8
         with:
           name: ${{ matrix.cache }}
-          authToken: '${{ matrix.secret }}'
+          authToken: '${{ secrets.${{ matrix.secret }} }}'
       - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}} --show-trace --keep-going
