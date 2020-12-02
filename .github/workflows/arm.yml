@@ -13,11 +13,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  armhf:
+  build:
     strategy:
       matrix:
         target: [ armv7l-hf-multiplatform, aarch64-multiplatform ]
-        package: [ vim, git, curl, perl ]
+        package: [ vim, nextdns, curl, perl ]
         include: 
           - target: armv7l-hf-multiplatform
             cache: armhf
