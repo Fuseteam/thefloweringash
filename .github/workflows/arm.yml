@@ -16,13 +16,13 @@ jobs:
   build:
     strategy:
       matrix:
-        target: [ armv7l-hf-multiplatform, aarch64-multiplatform ]
+        target: [ armv7l-hf-multiplatform ]
         package: [ htop, nmap, nextdns, tree ]
         include: 
           - target: armv7l-hf-multiplatform
             cache: armhf
-          - target: aarch64-multiplatform
-            cache: arm64
+          #- target: aarch64-multiplatform
+           # cache: arm64
       
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -36,6 +36,6 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - uses: cachix/cachix-action@v8
         with:
-          name: ${{ matrix.cache }}
-          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+            name: ${{ matrix.cache   }}
+            signingKey: '${{ secrets.ARMHF }}'
       - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}} --show-trace --keep-going
