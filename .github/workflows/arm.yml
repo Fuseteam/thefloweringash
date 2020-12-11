@@ -37,5 +37,5 @@ jobs:
       - uses: cachix/cachix-action@v8
         with:
             name: ${{ matrix.cache   }}
-            signingKey: '${{ secrets.ARMHF }}'
+            authToken: '${{ secrets.ARMHF }}'
       - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}} --show-trace --keep-going
