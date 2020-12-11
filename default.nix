@@ -1,8 +1,8 @@
 {target, package}:
 let
    nixpkgs= builtins.fetchGit { 
-    url = "https://github.com/Fuseteam/nixpkgs";
-    rev = "40c44fdd019cb96f2989818516a2aed4cb7e3464";
+    url = "https://github.com/nixos/nixpkgs";
+    rev = "f1f9a55fb4b1d5adeebfff6c5ec58ce445bf5e84";
   };
   pkgsOriginal = import nixpkgs {
     overlays = [
