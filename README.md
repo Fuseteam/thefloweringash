@@ -7,6 +7,10 @@ packages build successfully
 - zip
 - curl
 - perl
+- nextdns
+- tree
+- htop
+
 packages failed to build
 - nmap
 - git
