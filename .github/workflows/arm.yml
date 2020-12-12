@@ -16,7 +16,7 @@ jobs:
   build:
     strategy:
       matrix:
-        target: [ armv7l-hf-linux ]
+        target: [ armv7l-hf-multiplatform ]
         package: [ vim, zip, curl, htop, nextdns, tree ]
         include: 
           - target: armv7l-hf-linux
