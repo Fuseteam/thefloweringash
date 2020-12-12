@@ -36,5 +36,5 @@ jobs:
         with:
             name: ${{ matrix.cache }}
             authToken: '${{ secrets.ARMHF }}'
-      - run: nix show-derivation $(nix-instantiate default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}})
+     # - run: nix show-derivation $(nix-instantiate default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}})
       - run: nix-build default.nix --argstr target ${{ matrix.target }} --argstr package ${{ matrix.package}} --show-trace --keep-going
