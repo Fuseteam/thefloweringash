@@ -19,7 +19,7 @@ jobs:
         target: [ armv7l-hf-linux ]
         package: [ vim, zip, curl, htop, nextdns, tree ]
         include: 
-          - target: armv7l-hf-multiplatform
+          - target: armv7l-hf-linux
             cache: armhf
           #- target: aarch64-multiplatform
            # cache: arm64
