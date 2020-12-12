@@ -1,8 +1,7 @@
 {target, package}:
 let
-   nixpkgs= builtins.fetchGit { 
-    url = "https://github.com/nixos/nixpkgs";
-    rev = "f1f9a55fb4b1d5adeebfff6c5ec58ce445bf5e84";
+   nixpkgs= builtins.fetchTarball { url = "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz";
+   sha256 = "1wg61h4gndm3vcprdcg7rc4s1v3jkm5xd7lw8r2f67w502y94gcy";
   };
   pkgsOriginal = import nixpkgs {
     overlays = [
